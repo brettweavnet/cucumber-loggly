@@ -1,8 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'cucumber'
-require 'cucumber-loggly'
+require 'cucumber-loggly/search'
 
 RSpec.configure do |config|
   #spec config

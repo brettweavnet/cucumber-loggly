@@ -3,7 +3,7 @@
 require 'pathname'
 
 feature_dir   = Pathname.new('features').expand_path
-feature = ARGV[0]
+feature       = ARGV[0]
 
 parts = []
 parts << "cucumber"
@@ -11,7 +11,5 @@ parts << "--require #{feature_dir}" if feature_dir.exist?
 parts << "--format pretty" if ARGV.include?("--pretty")
 parts << feature
 command = parts.join(' ')
-
-puts command
 
 system(command)? exit(0) : exit(1)
