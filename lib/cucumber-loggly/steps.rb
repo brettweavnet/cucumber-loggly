@@ -1,20 +1,17 @@
 When /^I access loggly account (.*)$/ do |account|
-  @input = []
-  @query = []
-  @from  = "NOW-1HOUR"
-  @loggly = CucumberLoggly::Connect.new account
+  @loggly = CucumberLoggly::Search.new :account => account
 end
 
 And /^I search back (\d+) (.*)$/ do |num, duration|
-  @from = "NOW-#{num}#{duration.upcase}"
+  @loggly.from = "NOW-#{num}#{duration.upcase}"
 end
 
 And /^I include input (.*)$/ do |input|
-  @input << input
+  @loggly.input << input
 end
 
 And /^I include query (.*)$/ do |query|
-  @query << query
+  @loggly.query << query
 end
 
 Then /^I should find at least (\d+) occurances?$/ do |num|
