@@ -14,14 +14,17 @@ module CucumberLoggly
       @from  = "NOW-1HOUR"
     end
 
-    def search
-      result = @loggly.search :from  => @from,
-                              :query => @query,
-                              :input => @input
-      result["body"]["numFound"].to_i
+    def number_found
+      search["body"]["numFound"].to_i
     end
 
     private
+
+    def search
+      @loggly.search :from  => @from,
+                     :query => @query,
+                     :input => @input
+    end
 
     def config_file
       "#{ENV['HOME']}/.cucumber-loggly.yml"
