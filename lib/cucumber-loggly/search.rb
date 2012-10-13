@@ -2,9 +2,10 @@ require 'loggly-ruby-client'
 
 module CucumberLoggly
 
-  attr_accessor :input, :query, :from
-
   class Search
+
+    attr_accessor :input, :query, :from
+
     def initialize(args)
       @loggly = LogglyRubyClient::Search.new :config_file => config_file,
                                              :account     => args[:account]
