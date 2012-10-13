@@ -1,4 +1,4 @@
-When /^I access account (.*)$/ do |account|
+When /^I access loggly account (.*)$/ do |account|
   @input = []
   @query = []
   @from  = "NOW-1HOUR"

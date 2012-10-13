@@ -1,3 +1,5 @@
+require 'loggly-ruby-client'
+
 module CucumberLoggly
 
   class Connect

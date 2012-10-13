@@ -1,24 +1,24 @@
-# Cucumber::Loggly
+[![Build Status](https://secure.travis-ci.org/brettweavnet/cucumber-loggly.png)](http://travis-ci.org/brettweavnet/cucumber-loggly)
 
-TODO: Write a gem description
+Run cucumber specs to ensure events are checked.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+```
+gem install cucumber-loggly
+```
 
-    gem 'cucumber-loggly'
+## Getting Started
 
-And then execute:
+By default, cucumber-loggly will look for the default account.
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install cucumber-loggly
-
-## Usage
-
-TODO: Write usage instructions here
+```
+cat > ~/.cucumber-loggly.yml << EOF
+default:
+  username: your_username
+  password: your_password
+EOF
+```
 
 ## Contributing
 
