@@ -37,6 +37,24 @@ Run cucumber loggly against features:
 cucumber-loggly ~/example.feature
 ```
 
+Review the results:
+
+```
+# cucumber-loggly ~/example.feature
+Feature: example searches
+  Examples of searching
+
+  Scenario: Event occured minimum # of times # /Users/bweaver/example.feature:4
+    When I access loggly account default     # cucumber-loggly-0.1.1/lib/cucumber-loggly/steps.rb:1
+    And I include query status=success       # cucumber-loggly-0.1.1/lib/cucumber-loggly/steps.rb:13
+    And I search back 24 hours               # cucumber-loggly-0.1.1/lib/cucumber-loggly/steps.rb:5
+    Then I should find at least 1 occurance  # cucumber-loggly-0.1.1/lib/cucumber-loggly/steps.rb:17
+
+1 scenario (1 passed)
+4 steps (4 passed)
+0m0.976s
+```
+
 Get more advanced:
 
 ```
