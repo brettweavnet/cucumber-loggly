@@ -1,6 +1,6 @@
 [![Build Status](https://secure.travis-ci.org/brettweavnet/cucumber-loggly.png)](http://travis-ci.org/brettweavnet/cucumber-loggly)
 
-Write Cucumber features to ensure presence or lack of events for Loggly searches.
+Write [Cucumber](http://cukes.info) features to ensure presence or lack of events based on results of Loggly search.
 
 ## Installation
 
