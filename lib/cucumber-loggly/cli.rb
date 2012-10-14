@@ -5,7 +5,7 @@ module CucumberLoggly
 
     def initialize
       @feature_dir = Pathname.new('features').expand_path
-      @feature     = ARGV[0]
+      @feature     = ARGV.shift
     end
 
     def start

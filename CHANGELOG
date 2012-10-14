@@ -1,5 +1,7 @@
 ## HEAD:
 
+* Moved CLI into class
+
 ## v0.1.0:
 
 * Initial release
