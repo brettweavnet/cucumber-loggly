@@ -1,6 +1,6 @@
 [![Build Status](https://secure.travis-ci.org/brettweavnet/cucumber-loggly.png)](http://travis-ci.org/brettweavnet/cucumber-loggly)
 
-Run cucumber specs to ensure events are checked.
+Run cucumber specs to ensure events do or do not occur.
 
 ## Installation
 
