@@ -1,6 +1,6 @@
 [![Build Status](https://secure.travis-ci.org/brettweavnet/cucumber-loggly.png)](http://travis-ci.org/brettweavnet/cucumber-loggly)
 
-Run cucumber specs to ensure events do or do not occur.
+Write Cucumber features to ensure ensure presence or lack of events for Loggly searches.
 
 ## Installation
 
@@ -10,20 +10,36 @@ gem install cucumber-loggly
 
 ## Getting Started
 
-Create the config file.
+Create the config file:
 
 ```
-cat > ~/.cucumber-loggly.yml << EOF
 default:
   username: your_username
   password: your_password
-EOF
 ```
 
-Create a feature filem, for example:
+Create a feature file, for example:
 
 ```
-cat > ~/example.feature << EOF
+Feature: example searches
+  Examples of searching
+
+  Scenario: Event occured minimum # of times
+    When I access loggly account default
+    And I include query status=success
+    And I search back 24 hours
+    Then I should find at least 1 occurance
+```
+
+Run cucumber loggly against features:
+
+```
+cucumber-loggly ~/example.feature
+```
+
+Get more advanced:
+
+```
 Feature: example searches
   Examples of searching
 
@@ -48,18 +64,11 @@ Feature: example searches
     And I include query 500
     And I search back 72 hours
     Then I should find no occurances
-EOF
 ```
 
-Run cucumber loggly against features:
+Multiple query includes will be joined with **AND**.
 
-```
-cucumber-loggly ~/example.feature
-```
-
-Multiple queries will be joined with **AND**.
-
-Multiple inputs will be joined with **OR**.
+Multiple input includes will be joined with **OR**.
 
 ## Contributing
 

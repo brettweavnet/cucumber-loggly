@@ -16,6 +16,6 @@ Feature: example searches
 
   Scenario: Event has not occured
     When I access loggly account default
-    And I include query failed
-    And I search back 72 hours
+    And I include query failed-backup
+    And I search back 1 minute
     Then I should find no occurances
