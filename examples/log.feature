@@ -4,7 +4,7 @@ Feature: example searches
   Scenario: Event occured minimum # of times
     When I access loggly account default
     And I include query status=success
-    And I search back 24 hours
+    And I search back 72 hours
     Then I should find at least 1 occurance
 
   Scenario: Event occured no more than given # of times

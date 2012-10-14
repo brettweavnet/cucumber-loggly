@@ -14,18 +14,18 @@ module CucumberLoggly
         exit 1
       end
 
-      exit 2 unless system run_command
+      exit 2 unless system command
     end
 
     private
 
-    def run_command
-      parts = []
-      parts << "cucumber"
-      parts << "--require #{@feature_dir}" if @feature_dir.exist?
-      parts << "--format pretty" if ARGV.include?("--pretty")
-      parts << @feature
-      parts.join(' ')
+    def command
+      cmd = []
+      cmd << "cucumber"
+      cmd << "--require #{@feature_dir}" if @feature_dir.exist?
+      cmd << "--format pretty" if ARGV.include?("--pretty")
+      cmd << @feature
+      cmd.join(' ')
     end
 
   end
