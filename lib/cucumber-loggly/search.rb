@@ -7,8 +7,9 @@ module CucumberLoggly
     attr_accessor :input, :query, :from
 
     def initialize(args)
-      @loggly = LogglyRubyClient::Search.new :config_file => config_file,
-                                             :account     => args[:account]
+      options = { :config_file => config_file,
+                  :account     => args[:account] }
+      @loggly = LogglyRubyClient::Search.new options
       @input = []
       @query = []
       @from  = "NOW-1HOUR"

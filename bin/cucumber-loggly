@@ -2,5 +2,4 @@
 
 require 'cucumber-loggly/cli'
 
-cli = CucumberLoggly::CLI.new
-cli.start
+CucumberLoggly::CLI.new.start
