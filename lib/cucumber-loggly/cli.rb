@@ -14,7 +14,7 @@ module CucumberLoggly
         exit 1
       end
 
-      system(run_command)? exit(0) : exit(2)
+      exit 2 unless system run_command
     end
 
     private
