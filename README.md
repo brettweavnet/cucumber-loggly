@@ -34,14 +34,14 @@ Feature: example searches
     Then I should find at least 1 occurance
 
   Scenario: Event occured no more than given # of times
-    When I access account default
+    When I access loggly account default
     And I include input app-syslog
     And I search back 30 minutes
     And I include query success
     Then I should find less than 5 occurances
 
   Scenario: Event has not occured
-    When I access account default
+    When I access loggly account default
     And I include input app-http-1
     And I include input app-http-2
     And I include query failed
