@@ -10,7 +10,7 @@ gem install cucumber-loggly
 
 ## Getting Started
 
-By default, cucumber-loggly will look for the default account.
+Create the config file.
 
 ```
 cat > ~/.cucumber-loggly.yml << EOF
@@ -18,6 +18,43 @@ default:
   username: your_username
   password: your_password
 EOF
+```
+
+Create a feature filem, for example:
+
+```
+cat > ~/example.feature << EOF
+Feature: example searches
+  Examples of searching
+
+  Scenario: Event occured minimum # of times
+    When I access account default
+    And I include query status=success
+    And I search back 24 hours
+    Then I should find at least 1 occurance
+
+  Scenario: Event occured no more than given # of times
+    When I access account default
+    And I include input app-syslog
+    And I search back 30 minutes
+    And I include query success
+    Then I should find less than 5 occurances
+
+  Scenario: Event has not occured
+    When I access account default
+    And I include input app-http-1
+    And I include input app-http-2
+    And I include query failed
+    And I include query 500
+    And I search back 72 hours
+    Then I should find no occurances
+EOF
+```
+
+Run cucumber loggly against features:
+
+```
+cucumber-loggly ~/example.feature
 ```
 
 ## Contributing

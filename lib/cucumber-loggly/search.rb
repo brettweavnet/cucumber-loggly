@@ -15,7 +15,6 @@ module CucumberLoggly
     end
 
     def number_found
-      return false unless @query.any?
       search["body"]["numFound"].to_i
     end
 
