@@ -1,15 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'pathname'
+require 'cucumber-loggly/cli'
 
-feature_dir   = Pathname.new('features').expand_path
-feature       = ARGV[0]
-
-parts = []
-parts << "cucumber"
-parts << "--require #{feature_dir}" if feature_dir.exist?
-parts << "--format pretty" if ARGV.include?("--pretty")
-parts << feature
-command = parts.join(' ')
-
-system(command)? exit(0) : exit(1)
+cli = CucumberLoggly::CLI.new
+cli.start

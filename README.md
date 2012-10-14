@@ -57,9 +57,9 @@ Run cucumber loggly against features:
 cucumber-loggly ~/example.feature
 ```
 
-Multiple queries will be ANDed together.
+Multiple queries will be joined with **AND**.
 
-Multiple inputs will be ORed together.
+Multiple inputs will be joined with **OR**.
 
 ## Contributing
 
