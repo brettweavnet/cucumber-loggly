@@ -28,7 +28,7 @@ Feature: example searches
   Examples of searching
 
   Scenario: Event occured minimum # of times
-    When I access account default
+    When I access loggly account default
     And I include query status=success
     And I search back 24 hours
     Then I should find at least 1 occurance
@@ -56,6 +56,10 @@ Run cucumber loggly against features:
 ```
 cucumber-loggly ~/example.feature
 ```
+
+Multiple queries will be ANDed together.
+
+Multiple inputs will be ORed together.
 
 ## Contributing
 
