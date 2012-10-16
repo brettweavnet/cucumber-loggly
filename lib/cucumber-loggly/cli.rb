@@ -4,7 +4,8 @@ module CucumberLoggly
   class CLI
 
     def initialize
-      @feature_dir = Pathname.new('features').expand_path
+      @root        = Pathname.new(__FILE__).parent.parent.parent
+      @feature_dir = @root.join('features')
       @feature     = ARGV.shift
     end
 
