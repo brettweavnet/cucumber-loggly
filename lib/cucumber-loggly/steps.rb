@@ -14,14 +14,14 @@ And /^I include query (.*)$/ do |query|
   @loggly.query << query
 end
 
-Then /^I should find at least (\d+) occurances?$/ do |num|
+Then /^I should find at least (\d+) occurrences?$/ do |num|
   @loggly.number_found.should be >= num.to_i
 end
 
-Then /^I should find less than (\d+) occurances?$/ do |num|
+Then /^I should find less than (\d+) occurrences?$/ do |num|
   @loggly.number_found.should be < num.to_i
 end
 
-Then /^I should find no occurances?$/ do
+Then /^I should find no occurrences?$/ do
   @loggly.number_found.zero?.should be_true
 end
