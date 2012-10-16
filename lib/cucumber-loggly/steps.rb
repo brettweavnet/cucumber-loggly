@@ -10,7 +10,7 @@ And /^I include input (.*)$/ do |input|
   @loggly.input << input
 end
 
-And /^I include query (.*)$/ do |query|
+And /^I include query "(.*)"$/ do |query|
   @loggly.query << query
 end
 
