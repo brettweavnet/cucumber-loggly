@@ -20,5 +20,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rspec"
 
   gem.add_runtime_dependency "cucumber"
-  gem.add_runtime_dependency "loggly-ruby-client", ">= 0.2.0"
+  gem.add_runtime_dependency "loggly-ruby-client", ">= 0.2.1"
 end

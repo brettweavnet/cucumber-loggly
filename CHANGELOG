@@ -1,3 +1,7 @@
+#* v0.2.1:
+
+* Update to loggly-ruby-client 0.2.1 to fix queries w/ spaces
+
 ## v0.2.0:
 
 * Updated spelling
