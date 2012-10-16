@@ -9,6 +9,15 @@ describe CucumberLoggly::CLI do
   end
 
   context "when successful" do
+
+    it "should set the feature dir to the feature dir within gem" do
+      root        = Pathname.new(__FILE__).parent.parent
+      feature_dir = root.join('features')
+      File.stub :exist? => true
+      cli = CucumberLoggly::CLI.new
+      cli.instance_variable_get(:@feature_dir).should == feature_dir
+    end
+
     it "should run the command" do
       File.stub :exist? => true
       cli = CucumberLoggly::CLI.new

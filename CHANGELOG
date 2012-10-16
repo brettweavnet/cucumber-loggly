@@ -1,3 +1,7 @@
+## v0.3.1:
+
+* Correctly determine path
+
 ## v0.3.0:
 
 * Added quotes to step arguments
