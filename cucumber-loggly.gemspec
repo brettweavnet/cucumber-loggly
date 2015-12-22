@@ -6,8 +6,8 @@ require 'cucumber-loggly/version'
 Gem::Specification.new do |gem|
   gem.name          = "cucumber-loggly"
   gem.version       = CucumberLoggly::VERSION
-  gem.authors       = ["Brett Weaver"]
-  gem.email         = ["brett@weav.net"]
+  gem.authors       = ["brettweavnet"]
+  gem.email         = ["open-source-845@weav.net"]
   gem.description   = %q{Cucumber log searching pluging for Loggly.}
   gem.summary       = %q{cucumber-loggly matches number of expected events in loggly}
   gem.homepage      = "https://github.com/brettweavnet/cucumber-loggly"
